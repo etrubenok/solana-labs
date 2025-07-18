@@ -5,7 +5,7 @@ const network = process.argv[2];
 const publicKeyStr = process.argv[3];
 if (!network || !publicKeyStr) {
     console.error('Usage: node check-balance.js <network> <publicKey>');
-    console.error('Example: node check-balance.js devnet 4Nd1m5g7z8f3k9d2e1b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5y');
+    console.error('Example: node check-balance.js mainnet toly.sol');
     process.exit(1);
 }
 if (network !== 'devnet' && network !== 'mainnet') {
