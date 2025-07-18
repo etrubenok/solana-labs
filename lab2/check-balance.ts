@@ -32,11 +32,7 @@ async function resolvePublicKey(publicKeyOrDomain: string, connection: Connectio
     if (isValidPublicKey(publicKeyOrDomain)) {
         return new PublicKey(publicKeyOrDomain);
     } else if (isDomain(publicKeyOrDomain)) {
-        const resolvedPublicKey = await resolveDomainToPublicKey(publicKeyOrDomain, connection);
-        if (resolvedPublicKey === null) {
-            throw new Error('Failed to resolve domain: ' + publicKeyOrDomain);
-        }
-        return resolvedPublicKey;
+        return resolveDomainToPublicKey(publicKeyOrDomain, connection);
     } else {
         throw new Error('Invalid public key or domain: ' + publicKeyOrDomain);
     }
